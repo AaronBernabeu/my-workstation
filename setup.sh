@@ -56,8 +56,10 @@ sudo apt install -y \
 ./software/install-jetbrains-toolbox.sh
 ./software/install-virtualbox.sh
 ./software/install-zsh.sh
+./software/install-diodon.sh
 
 # Custom config
+./custom/gtile-gnome-shell-extension.sh
 ./custom/install-dotfiles.sh
 
 echo
