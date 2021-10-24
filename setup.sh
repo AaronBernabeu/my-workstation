@@ -60,6 +60,7 @@ sudo apt install -y \
 ./software/install-diodon.sh
 
 # Custom config
+./custom/gnome-extension-installer.sh
 ./custom/gtile-gnome-shell-extension.sh
 ./custom/install-dotfiles.sh
 
