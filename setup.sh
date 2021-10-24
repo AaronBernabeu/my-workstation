@@ -52,6 +52,7 @@ sudo apt install -y \
 ./software/install-git.sh
 ./software/install-telegram.sh
 ./software/install-slack.sh
+./software/install-k9s.sh
 ./software/install-fzf.sh
 ./software/install-jetbrains-toolbox.sh
 ./software/install-virtualbox.sh
