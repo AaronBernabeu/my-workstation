@@ -54,6 +54,7 @@ sudo apt install -y \
 ./software/install-slack.sh
 ./software/install-k9s.sh
 ./software/install-fzf.sh
+./software/install-winbox.sh
 ./software/install-jetbrains-toolbox.sh
 ./software/install-virtualbox.sh
 ./software/install-zsh.sh
