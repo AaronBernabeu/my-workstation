@@ -7,5 +7,5 @@ echo "################################################################"
 echo
 
 if ! location=$(type -p "kubectl"); then
-  	sudo snap install kubectl
+  	sudo snap install kubectl --classic
 fi

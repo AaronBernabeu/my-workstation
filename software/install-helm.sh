@@ -7,5 +7,5 @@ echo "################################################################"
 echo
 
 if ! location=$(type -p "helm"); then
-  	sudo snap install helm
+  	sudo snap install helm --classic
 fi
