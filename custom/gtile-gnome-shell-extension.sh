@@ -7,10 +7,12 @@ echo "################################################################"
 echo
 
 GTILE_UUID="gTile@vibou"
-GTILE_WEB_ID="28"
+GTILE_VERSION="50"
 
 if ! [ -a "~/.local/share/gnome-shell/extensions/$GTILE_UUID" ]; then
-    gnome-shell-extension-installer $GTILE_WEB_ID --yes
+    wget -O /tmp/gTilevibou.v$GTILE_VERSION.shell-extension.zip https://extensions.gnome.org/extension-data/gTilevibou.v$GTILE_VERSION.shell-extension.zip
+    mkdir -p ~/.local/share/gnome-shell/extensions/$GTILE_UUID
+    unzip -q /tmp/gTilevibou.v$GTILE_VERSION.shell-extension.zip -d ~/.local/share/gnome-shell/extensions/$GTILE_UUID
+    rm /tmp/gTilevibou.v$GTILE_VERSION.shell-extension.zip
+    gnome-extensions enable $GTILE_UUID
 fi
-
-gnome-extensions enable $GTILE_UUID
