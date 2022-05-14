@@ -10,6 +10,8 @@ if ! test -f ~/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox; then
     SETUP_DIR="$(pwd)"
     cd /opt
 
+    sudo apt install -y fuse
+
     sudo wget https://download-cdn.jetbrains.com/toolbox/jetbrains-toolbox-1.24.11947.tar.gz
     sudo tar -xzf jetbrains-toolbox-1.24.11947.tar.gz
     sudo rm jetbrains-toolbox-1.24.11947.tar.gz
