@@ -7,12 +7,18 @@ echo "################################################################"
 echo
 
 GTILE_UUID="gTile@vibou"
-GTILE_VERSION="50"
+GTILE_WEB_ID="28"
 
 if ! [ -a "~/.local/share/gnome-shell/extensions/$GTILE_UUID" ]; then
-    wget -O /tmp/gTilevibou.v$GTILE_VERSION.shell-extension.zip https://extensions.gnome.org/extension-data/gTilevibou.v$GTILE_VERSION.shell-extension.zip
-    mkdir -p ~/.local/share/gnome-shell/extensions/$GTILE_UUID
-    unzip -q /tmp/gTilevibou.v$GTILE_VERSION.shell-extension.zip -d ~/.local/share/gnome-shell/extensions/$GTILE_UUID
-    rm /tmp/gTilevibou.v$GTILE_VERSION.shell-extension.zip
-    gnome-extensions enable $GTILE_UUID
+    echo
+    echo "+--------------------------------------------------------------+"
+    echo "|  If you have an error like extension not found               |"
+    echo "|     reboot you computer an run again setup script            |"
+    echo "+--------------------------------------------------------------+"
+    echo
+    read -p "Press enter to continue"
+
+    gnome-shell-extension-installer $GTILE_WEB_ID --yes
 fi
+
+gnome-extensions enable $GTILE_UUID
