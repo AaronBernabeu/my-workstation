@@ -10,6 +10,14 @@ GTILE_UUID="gTile@vibou"
 GTILE_WEB_ID="28"
 
 if ! [ -a "~/.local/share/gnome-shell/extensions/$GTILE_UUID" ]; then
+    echo
+    echo "+--------------------------------------------------------------+"
+    echo "|  If you have an error like extension not found               |"
+    echo "|     reboot you computer an run again setup script            |"
+    echo "+--------------------------------------------------------------+"
+    echo
+    read -p "Press enter to continue"
+
     gnome-shell-extension-installer $GTILE_WEB_ID --yes
 fi
 

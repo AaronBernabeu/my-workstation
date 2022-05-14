@@ -53,7 +53,10 @@ sudo apt install -y \
 ./software/install-telegram.sh
 ./software/install-slack.sh
 ./software/install-k9s.sh
+./software/install-kubectl.sh
+./software/install-helm.sh
 ./software/install-fzf.sh
+./software/install-wine.sh
 ./software/install-winbox.sh
 ./software/install-jetbrains-toolbox.sh
 ./software/install-virtualbox.sh
