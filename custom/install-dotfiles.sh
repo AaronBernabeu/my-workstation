@@ -6,10 +6,14 @@ echo "  Installing my dotfiles                                        "
 echo "################################################################"
 echo
 
-if ! test -f ~/.dotfiles; then
-  SETUP_DIR="$(pwd)"
+SETUP_DIR="$(pwd)"
+if ! test -d ~/.dotfiles; then
   git clone https://github.com/Aaronidas/dotfiles.git ~/.dotfiles
   cd ~/.dotfiles
-  sh ./install
-  cd ${SETUP_DIR}
+else
+  cd ~/.dotfiles
+  git pull
 fi
+
+sh ./install
+cd ${SETUP_DIR}
