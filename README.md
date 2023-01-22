@@ -15,6 +15,7 @@ Execute the following command in the bash terminal:
 
 ## Tested on
 - [Ubuntu Desktop 22.04 LTS](https://releases.ubuntu.com/22.04/ubuntu-22.04-desktop-amd64.iso)
+- [Ubuntu Desktop 22.10](https://releases.ubuntu.com/22.10/ubuntu-22.10-desktop-amd64.iso)
 
 ## License
 Licensed under the [MIT license](http://opensource.org/licenses/MIT)
