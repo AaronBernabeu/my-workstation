@@ -65,7 +65,6 @@ sudo apt install -y \
 
 # Custom config
 ./custom/gnome-extension-installer.sh
-./custom/gtile-gnome-shell-extension.sh
 ./custom/install-dotfiles.sh
 
 echo
