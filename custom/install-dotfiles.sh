@@ -8,7 +8,7 @@ echo
 
 SETUP_DIR="$(pwd)"
 if ! test -d ~/.dotfiles; then
-  git clone https://github.com/Aaronidas/dotfiles.git ~/.dotfiles
+  git clone https://github.com/AaronBernabeu/dotfiles.git ~/.dotfiles
   cd ~/.dotfiles
 else
   cd ~/.dotfiles
