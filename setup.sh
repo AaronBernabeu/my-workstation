@@ -65,6 +65,7 @@ sudo apt install -y \
 ./software/install-eza.sh
 ./software/install-bat.sh
 ./software/install-nvm.sh
+./software/install-claude-code.sh
 ./software/install-zsh.sh
 ./software/install-diodon.sh
 
