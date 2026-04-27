@@ -38,16 +38,13 @@ sudo apt install -y \
 # Software installation
 ./software/uninstall-applications-by-default.sh
 ./software/install-ubuntu-restricted-extras.sh
-./software/install-gnome-applications.sh
 ./software/install-traceroute.sh
 ./software/install-curl.sh
-./software/install-unrar.sh
 ./software/install-htop.sh
-./software/install-screenfetch.sh
 ./software/install-sensors.sh
 ./software/install-docker.sh
 ./software/install-google-chrome.sh
-./software/install-filezilla.sh
+./software/install-brave.sh
 ./software/install-vlc.sh
 ./software/install-git.sh
 ./software/install-telegram.sh
@@ -55,11 +52,19 @@ sudo apt install -y \
 ./software/install-k9s.sh
 ./software/install-kubectl.sh
 ./software/install-helm.sh
+./software/install-aws-cli.sh
+./software/install-tfenv.sh
 ./software/install-fzf.sh
-./software/install-wine.sh
 ./software/install-winbox.sh
 ./software/install-jetbrains-toolbox.sh
 ./software/install-virtualbox.sh
+./software/install-nerdfonts.sh
+./software/install-kitty.sh
+./software/install-starship.sh
+./software/install-fastfetch.sh
+./software/install-eza.sh
+./software/install-bat.sh
+./software/install-nvm.sh
 ./software/install-zsh.sh
 ./software/install-diodon.sh
 

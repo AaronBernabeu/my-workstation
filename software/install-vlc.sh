@@ -6,6 +6,6 @@ echo "  Installing VLC media player                                   "
 echo "################################################################"
 echo
 
-if ! location=$(type -p "vlc"); then
-  	sudo snap install vlc
+if ! command -v vlc &>/dev/null; then
+    sudo apt install -y vlc
 fi

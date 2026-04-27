@@ -2,10 +2,10 @@
 
 echo
 echo "################################################################"
-echo "  Installing UnRAR                                              "
+echo "  Installing eza                                                "
 echo "################################################################"
 echo
 
-if ! location=$(type -p "unrar"); then
-  	sudo apt install -y unrar
+if ! command -v eza &>/dev/null; then
+    sudo apt install -y eza
 fi

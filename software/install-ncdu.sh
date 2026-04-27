@@ -6,6 +6,6 @@ echo "  Installing Ncdu                                               "
 echo "################################################################"
 echo
 
-if ! location=$(type -p "ncdu"); then
-  	sudo apt install -y ncdu
+if ! command -v ncdu &>/dev/null; then
+    sudo apt install -y ncdu
 fi

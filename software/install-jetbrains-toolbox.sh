@@ -7,15 +7,12 @@ echo "################################################################"
 echo
 
 if ! test -f ~/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox; then
-    SETUP_DIR="$(pwd)"
-    cd /opt
+    TOOLBOX_URL=$(curl -s "https://data.services.jetbrains.com/products/releases?code=TBA&latest=true&type=release" \
+      | grep -Po '"linux":.*?"link":"\K[^"]+')
 
-    sudo apt install -y libfuse2
-
-    sudo wget https://download-cdn.jetbrains.com/toolbox/jetbrains-toolbox-1.27.2.13801.tar.gz
-    sudo tar -xzf jetbrains-toolbox-1.27.2.13801.tar.gz
-    sudo rm jetbrains-toolbox-1.27.2.13801.tar.gz
-    ./jetbrains-toolbox-1.27.2.13801/jetbrains-toolbox
-
-    cd ${SETUP_DIR}
+    TMP_DIR=$(mktemp -d)
+    curl -fsSL "$TOOLBOX_URL" -o "$TMP_DIR/jetbrains-toolbox.tar.gz"
+    tar -xzf "$TMP_DIR/jetbrains-toolbox.tar.gz" -C "$TMP_DIR"
+    "$TMP_DIR"/jetbrains-toolbox-*/jetbrains-toolbox
+    rm -rf "$TMP_DIR"
 fi

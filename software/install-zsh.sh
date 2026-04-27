@@ -6,38 +6,24 @@ echo "  Installing Z Shell + Oh My Zsh                                "
 echo "################################################################"
 echo
 
-if ! package=$(dpkg-query --list | grep "fonts-powerline"); then
+if ! dpkg -l fonts-powerline &>/dev/null; then
     sudo apt install -y fonts-powerline
 fi
 
-if ! location=$(type -p "zsh"); then
+if ! command -v zsh &>/dev/null; then
     sudo apt install -y zsh
 fi
 
-if ! location=$(type -p "toilet"); then
+if ! command -v toilet &>/dev/null; then
     sudo apt install -y toilet
 fi
 
-if ! [ -a "~/.zshrc" ]; then
-    echo
-    echo "+--------------------------------------------------------------+"
-    echo "| Oh My Zsh will be installed, after installation it will      |"
-    echo "|     appear inside the new shell.                             |"
-    echo "| Type the 'exit' command to exit Z shell and                  |"
-    echo "|     continue the installation                                |"
-    echo "+--------------------------------------------------------------+"
-    echo
-    read -p "Press enter to continue"
+if [ ! -f ~/.zshrc ]; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
 
-    SETUP_DIR="$(pwd)"
+    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    git clone https://github.com/TamCore/autoupdate-oh-my-zsh-plugins ~/.oh-my-zsh/custom/plugins/autoupdate
 
-    cd ~
-    sh -c "$(wget -qO - https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-    cd ~/.oh-my-zsh/custom/plugins
-    git clone https://github.com/zsh-users/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-    git clone https://github.com/TamCore/autoupdate-oh-my-zsh-plugins autoupdate
-
-    cd ${SETUP_DIR}
+    chsh -s "$(which zsh)"
 fi

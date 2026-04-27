@@ -2,10 +2,10 @@
 
 echo
 echo "################################################################"
-echo "  Installing Screenfetch                                        "
+echo "  Installing bat                                                "
 echo "################################################################"
 echo
 
-if ! location=$(type -p "screenfetch"); then
-  	sudo apt install -y screenfetch
+if ! command -v batcat &>/dev/null; then
+    sudo apt install -y bat
 fi

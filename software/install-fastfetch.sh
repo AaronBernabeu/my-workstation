@@ -2,10 +2,10 @@
 
 echo
 echo "################################################################"
-echo "  Installing Wine                                               "
+echo "  Installing Fastfetch                                          "
 echo "################################################################"
 echo
 
-if ! location=$(type -p "wine"); then
-  	sudo apt install -y wine
+if ! command -v fastfetch &>/dev/null; then
+    sudo apt install -y fastfetch
 fi

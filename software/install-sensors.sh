@@ -6,10 +6,10 @@ echo "  Installing Psensor                                            "
 echo "################################################################"
 echo
 
-if ! location=$(type -p "psensor"); then
+if ! command -v psensor &>/dev/null; then
     sudo apt install -y \
         lm-sensors \
         psensor
 
-    (while :; do echo ""; done) | sudo sensors-detect
+    sudo sensors-detect --auto
 fi

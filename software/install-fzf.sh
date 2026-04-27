@@ -6,6 +6,6 @@ echo "  Installing fzf                                                "
 echo "################################################################"
 echo
 
-if ! location=$(type -p "fzf"); then
+if ! command -v fzf &>/dev/null; then
     sudo apt install -y fzf
 fi
