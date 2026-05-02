@@ -12,4 +12,7 @@ if [ ! -f ~/.local/kitty.app/bin/kitty ]; then
     mkdir -p ~/.local/bin
     ln -sf ~/.local/kitty.app/bin/kitty ~/.local/bin/kitty
     ln -sf ~/.local/kitty.app/bin/kitten ~/.local/bin/kitten
+
+    sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator ~/.local/kitty.app/bin/kitty 50
+    sudo update-alternatives --set x-terminal-emulator ~/.local/kitty.app/bin/kitty
 fi
