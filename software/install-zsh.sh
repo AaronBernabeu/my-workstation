@@ -25,5 +25,5 @@ if [ ! -f ~/.zshrc ]; then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
     git clone https://github.com/TamCore/autoupdate-oh-my-zsh-plugins ~/.oh-my-zsh/custom/plugins/autoupdate
 
-    chsh -s "$(which zsh)"
+    sudo chsh -s "$(which zsh)" "$USER"
 fi
