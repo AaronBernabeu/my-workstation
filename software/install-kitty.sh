@@ -17,11 +17,29 @@ if [ ! -f ~/.local/kitty.app/bin/kitty ]; then
     sudo update-alternatives --set x-terminal-emulator ~/.local/kitty.app/bin/kitty
 fi
 
-# Copy .desktop files so GNOME/XDG can find kitty
+# Create .desktop with absolute paths and StartupWMClass so GNOME shows the icon correctly
 mkdir -p ~/.local/share/applications
-cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+KITTY_BIN="$HOME/.local/kitty.app/bin/kitty"
+KITTY_ICON="$HOME/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png"
+cat > ~/.local/share/applications/kitty.desktop << DESKTOP
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=kitty
+GenericName=Terminal emulator
+Comment=Fast, feature-rich, GPU based terminal
+TryExec=${KITTY_BIN}
+StartupNotify=true
+StartupWMClass=kitty
+Exec=${KITTY_BIN}
+Icon=${KITTY_ICON}
+Categories=System;TerminalEmulator;
+X-TerminalArgExec=--
+X-TerminalArgTitle=--title
+X-TerminalArgAppId=--class
+X-TerminalArgDir=--working-directory
+X-TerminalArgHold=--hold
+DESKTOP
 cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
-# Fix the icon path inside the .desktop file
-sed -i "s|Icon=kitty|Icon=$(readlink -f ~/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png)|g" ~/.local/share/applications/kitty.desktop
 update-desktop-database ~/.local/share/applications/ 2>/dev/null || true
 
