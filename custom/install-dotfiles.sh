@@ -12,7 +12,7 @@ if ! test -d ~/.dotfiles; then
   cd ~/.dotfiles
 else
   cd ~/.dotfiles
-  git pull
+  git pull origin master
 fi
 
 sh ./install
